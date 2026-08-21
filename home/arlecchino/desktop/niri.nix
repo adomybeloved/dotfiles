@@ -10,6 +10,10 @@
         source = "builtin";
         builtin = "Catppuccin";
       };
+      lockscreen = {
+        enabled = false;
+        lockBeforeSuspend = false;
+      };
     };
   };
 

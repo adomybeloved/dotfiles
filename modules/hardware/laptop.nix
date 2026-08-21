@@ -16,15 +16,11 @@
   services.logind = {
     settings = {
       Login = {
-        HandlePowerKey = "suspend-then-hibernate";
-        HandleLidSwitch = "suspend-then-hibernate";
+        HandlePowerKey = "suspend";
+        HandleLidSwitch = "suspend";
         HandleLidSwitchExternalPower = "suspend";
       };
     };
-  };
-
-  systemd.sleep.settings.Sleep = {
-    HibernateDelaySec = "1h";
   };
 
   services.udev.extraRules = ''
