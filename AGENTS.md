@@ -12,7 +12,7 @@ Dotfiles/
 ├── AGENTS.md                       # Guidelines for AI assistants
 ├── hosts/                          # Machine-specific host configurations
 │   └── laptop/
-│       ├── default.nix             # Host definition (imports hardware, core, desktop/niri)
+│       ├── default.nix             # Host definition (imports hardware-config, core, desktop/niri, hardware/*)
 │       └── hardware-configuration.nix
 ├── modules/                        # System-level NixOS modules
 │   ├── core/
@@ -26,8 +26,12 @@ Dotfiles/
 │   │   ├── fonts.nix               # System fonts (Iosevka, JetBrainsMono, Inter, fontconfig)
 │   │   ├── users.nix               # User accounts and default login shell
 │   │   └── packages.nix            # System packages
-│   └── desktop/
-│       └── niri.nix                # System-level Niri compositor, SDDM, portals, Noctalia services
+│   ├── desktop/
+│   │   └── niri.nix                # System-level Niri compositor, SDDM, portals, Noctalia services
+│   └── hardware/
+│       ├── amd.nix                 # AMD P-State, Mesa graphics
+│       ├── laptop.nix              # Touchpad libinput, power-profiles-daemon
+│       └── bluetooth.nix           # Bluetooth service and powerOnBoot
 ├── home/                           # User-level Home Manager configurations
 │   └── arlecchino/
 │       ├── default.nix             # Main user config aggregator (Catppuccin Mocha theme)

@@ -5,38 +5,10 @@
     ./hardware-configuration.nix
     ../../modules/core
     ../../modules/desktop/niri.nix
+    ../../modules/hardware/amd.nix
+    ../../modules/hardware/laptop.nix
+    ../../modules/hardware/bluetooth.nix
   ];
 
   networking.hostName = "laptop";
-
-  boot.kernelParams = [
-    "amd_pstate=active"
-  ];
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
-  services.power-profiles-daemon.enable = true;
-
-  services.libinput = {
-    enable = true;
-    touchpad = {
-      tapping = true;
-      naturalScrolling = true;
-      scrollMethod = "twofinger";
-      accelProfile = "flat";
-      accelSpeed = "0.2";
-    };
-    mouse = {
-      accelProfile = "flat";
-      accelSpeed = "0.0";
-    };
-  };
 }
