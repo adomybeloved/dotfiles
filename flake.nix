@@ -23,9 +23,13 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    qylock = {
+      url = "github:Darkkal44/qylock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, catppuccin, noctalia, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, sops-nix, catppuccin, noctalia, qylock, ... }@inputs: {
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
@@ -34,6 +38,7 @@
           sops-nix.nixosModules.sops
           catppuccin.nixosModules.catppuccin
           noctalia.nixosModules.default
+          qylock.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

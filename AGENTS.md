@@ -6,7 +6,7 @@ This repository contains declarative NixOS and Home Manager configurations using
 
 ```text
 Dotfiles/
-├── flake.nix                       # Flake entrypoint (inputs: nixpkgs-unstable, home-manager, sops-nix, zen-browser, catppuccin, noctalia)
+├── flake.nix                       # Flake entrypoint (inputs: nixpkgs-unstable, home-manager, sops-nix, zen-browser, catppuccin, noctalia, qylock)
 ├── flake.lock                      # Flake lockfile
 ├── .sops.yaml                      # SOPS encryption keys and path rules
 ├── AGENTS.md                       # Guidelines for AI assistants
@@ -27,16 +27,16 @@ Dotfiles/
 │   │   ├── users.nix               # User accounts and default login shell
 │   │   └── packages.nix            # System packages
 │   ├── desktop/
-│   │   └── niri.nix                # System-level Niri compositor, SDDM, portals, Noctalia services
+│   │   └── niri.nix                # System-level Niri compositor, SDDM, portals, Noctalia services, Qylock (Reverse: 1999)
 │   └── hardware/
 │       ├── amd.nix                 # AMD P-State, Mesa graphics
-│       ├── laptop.nix              # Touchpad libinput, power-profiles-daemon
+│       ├── laptop.nix              # Touchpad libinput, power-profiles-daemon, 80% battery threshold
 │       └── bluetooth.nix           # Bluetooth service and powerOnBoot
 ├── home/                           # User-level Home Manager configurations
 │   └── arlecchino/
 │       ├── default.nix             # Main user config aggregator (Catppuccin Mocha theme)
 │       ├── desktop/
-│       │   └── niri.nix            # User-level Niri scrollable tiling configuration, Noctalia shell
+│       │   └── niri.nix            # User-level Niri scrollable tiling configuration, Noctalia shell, Qylock lockscreen
 │       ├── shell/
 │       │   ├── default.nix         # Zsh, completion, history, aliases
 │       │   ├── starship.nix        # Starship prompt configuration

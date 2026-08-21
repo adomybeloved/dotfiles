@@ -23,7 +23,7 @@
       }
       {
         timeout = 600;
-        command = "${inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/noctalia msg session lock";
+        command = "qylock-lock";
       }
       {
         timeout = 1200;
@@ -31,8 +31,8 @@
       }
     ];
     events = {
-      before-sleep = "${inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/noctalia msg session lock";
-      lock = "${inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/noctalia msg session lock";
+      before-sleep = "qylock-lock";
+      lock = "qylock-lock";
     };
   };
 
@@ -103,8 +103,8 @@
       Mod+D { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
       Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
       Mod+N { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
-      Mod+Escape { spawn "noctalia" "msg" "session" "lock"; }
-      Mod+Shift+L { spawn "noctalia" "msg" "session" "lock"; }
+      Mod+Escape { spawn "qylock-lock"; }
+      Mod+Shift+L { spawn "qylock-lock"; }
 
       Mod+Q { close-window; }
       Mod+Shift+E { quit; }

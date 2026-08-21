@@ -10,6 +10,13 @@
 
   services.displayManager.defaultSession = "niri";
 
+  programs.qylock = {
+    enable = true;
+    theme = "R1999_2";
+    sddm.enable = true;
+    quickshell.enable = true;
+  };
+
   services.xserver.xkb = {
     layout = "us,ru";
     options = "grp:alt_shift_toggle";
@@ -34,7 +41,7 @@
     autoEnable = true;
     flavor = "mocha";
     accent = "mauve";
-    sddm.enable = true;
+    sddm.enable = false;
   };
 
   environment.systemPackages = with pkgs; [
