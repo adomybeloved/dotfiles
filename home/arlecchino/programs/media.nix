@@ -44,6 +44,7 @@
   home.packages = with pkgs; [
     ayugram-desktop
     vesktop
+    flameshot
     yt-dlp
     imv
     comma

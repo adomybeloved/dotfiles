@@ -14,7 +14,8 @@
     $DRY_RUN_CMD ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 --file kglobalshortcutsrc --group "services" --group "org.kde.spectacle.desktop" --key "_launch" "none,none,Spectacle" 2>/dev/null || true
     $DRY_RUN_CMD ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 --file kglobalshortcutsrc --group "services" --group "org.kde.spectacle.desktop" --key "RectangularRegionScreenShot" "none,none,Capture Rectangular Region" 2>/dev/null || true
     $DRY_RUN_CMD ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 --file kglobalshortcutsrc --group "services" --group "org.kde.spectacle.desktop" --key "FullScreenScreenShot" "none,none,Capture Entire Desktop" 2>/dev/null || true
-    $DRY_RUN_CMD ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 --file kglobalshortcutsrc --group "services" --group "org.flameshot.Flameshot.desktop" --key "_launch" "Print\tMeta+Shift+S,Print\tMeta+Shift+S,Take Screenshot" 2>/dev/null || true
+    $DRY_RUN_CMD ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 --file kglobalshortcutsrc --group "services" --group "org.flameshot.Flameshot.desktop" --key "Capture" "Meta+Shift+S,Meta+Shift+S,Take screenshot" 2>/dev/null || true
+    $DRY_RUN_CMD ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 --file kglobalshortcutsrc --group "services" --group "org.flameshot.Flameshot.desktop" --key "_launch" "Print,Print,Flameshot" 2>/dev/null || true
     $DRY_RUN_CMD ${pkgs.kdePackages.kdbusaddons}/bin/qdbus6 org.kde.kglobalaccel /kglobalaccel org.kde.KGlobalAccel.reloadConfig 2>/dev/null || true
   '';
 }
