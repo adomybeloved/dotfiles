@@ -16,7 +16,15 @@ Dotfiles/
 │       └── hardware-configuration.nix
 ├── modules/                        # System-level NixOS modules
 │   ├── core/
-│   │   └── default.nix             # Base system (bootloader, nix settings, pipewire, locales, users)
+│   │   ├── default.nix             # Base system aggregator
+│   │   ├── nix.nix                 # Nix daemon settings, GC, store optimization
+│   │   ├── boot.nix                # Limine bootloader, kernel
+│   │   ├── security.nix            # Polkit, RTKit, sudo
+│   │   ├── network.nix             # NetworkManager
+│   │   ├── sound.nix               # PipeWire
+│   │   ├── locale.nix              # Timezone, locales
+│   │   ├── users.nix               # User accounts
+│   │   └── packages.nix            # System packages
 │   └── desktop/
 │       └── plasma.nix              # Desktop environment (SDDM, KDE Plasma 6)
 ├── home/                           # User-level Home Manager configurations
