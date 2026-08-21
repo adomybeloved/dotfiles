@@ -1,6 +1,11 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.zen-browser.homeModules.default
+    inputs.helium-browser.homeModules.default
+  ];
+
   programs.firefox = {
     enable = true;
     policies = {
@@ -21,8 +26,11 @@
     };
   };
 
-  home.packages = [
-    inputs.zen-browser.packages.${pkgs.system}.default
-    inputs.helium-browser.packages.${pkgs.system}.default
-  ];
+  programs.zen-browser = {
+    enable = true;
+  };
+
+  programs.helium = {
+    enable = true;
+  };
 }
