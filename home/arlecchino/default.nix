@@ -8,6 +8,7 @@
     ./programs/git.nix
     ./programs/browsers.nix
     ./programs/media.nix
+    ./programs/dev.nix
   ];
 
   home.username = "arlecchino";

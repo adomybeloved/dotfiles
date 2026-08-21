@@ -25,7 +25,8 @@ Dotfiles/
 │   │   ├── locale.nix              # Timezone, locales
 │   │   ├── fonts.nix               # System fonts (Iosevka, JetBrainsMono, Inter, fontconfig)
 │   │   ├── users.nix               # User accounts and default login shell
-│   │   └── packages.nix            # System packages
+│   │   ├── packages.nix            # System packages
+│   │   └── docker.nix              # Docker daemon (Btrfs storage driver), autoPrune
 │   ├── desktop/
 │   │   ├── niri.nix                # System-level Niri compositor, portals, Noctalia services
 │   │   └── qylock.nix              # Qylock (Reverse: 1999) SDDM theme and GStreamer video codecs
@@ -48,6 +49,7 @@ Dotfiles/
 │           ├── git.nix             # Git, SSH, GitHub CLI, age/sops tools
 │           ├── browsers.nix        # Firefox, Zen Browser (default browser)
 │           └── media.nix           # AyuGram, Vesktop, MPV (GPU-next + uosc), Flameshot, comma, daily tools
+│           └── dev.nix             # Bun, Node, Corepack, Python (uv), Rust, Go, Termius, Bruno
 └── secrets/                        # Encrypted secret files managed by sops-nix
 ```
 

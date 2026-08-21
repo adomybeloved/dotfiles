@@ -6,7 +6,7 @@
   users.users.arlecchino = {
     isNormalUser = true;
     description = "Aleksandra Mironova";
-    extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "audio" "docker" ];
     shell = pkgs.zsh;
   };
 }

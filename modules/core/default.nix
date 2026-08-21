@@ -11,6 +11,7 @@
     ./fonts.nix
     ./users.nix
     ./packages.nix
+    ./docker.nix
   ];
 
   system.stateVersion = "26.05";
