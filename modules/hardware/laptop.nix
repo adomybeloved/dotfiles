@@ -19,6 +19,7 @@
         HandlePowerKey = "suspend";
         HandleLidSwitch = "suspend";
         HandleLidSwitchExternalPower = "suspend";
+        InhibitDelayMaxSec = "5";
       };
     };
   };
@@ -34,6 +35,16 @@
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash -c 'if [ -f /sys/class/power_supply/BATT/charge_control_end_threshold ]; then echo 80 > /sys/class/power_supply/BATT/charge_control_end_threshold; fi'";
+    };
+  };
+
+  systemd.services.disable-acpi-wakeups = {
+    description = "Disable spurious ACPI wakeup triggers";
+    after = [ "multi-user.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'for dev in XHC0 XHC1 XHC3 XHC4 NHI0 NHI1; do if grep -q \"^$dev.*\\*enabled\" /proc/acpi/wakeup; then echo $dev > /proc/acpi/wakeup; fi; done'";
     };
   };
 

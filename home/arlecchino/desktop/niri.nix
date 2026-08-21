@@ -21,16 +21,16 @@
     enable = true;
     timeouts = [
       {
-        timeout = 300;
+        timeout = 180;
         command = "${pkgs.brightnessctl}/bin/brightnessctl -s set 10%";
         resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl -r";
       }
       {
-        timeout = 600;
+        timeout = 300;
         command = "qylock-lock";
       }
       {
-        timeout = 1200;
+        timeout = 600;
         command = "${pkgs.systemd}/bin/systemctl suspend";
       }
     ];
