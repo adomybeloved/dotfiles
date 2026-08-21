@@ -4,7 +4,8 @@
   home.packages = with pkgs; [
     bun
     nodejs_22
-    corepack
+    pnpm
+    yarn
     typescript
 
     python3
