@@ -5,26 +5,173 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      add_newline = true;
-      character = {
-        success_symbol = "[➜](bold green)";
-        error_symbol = "[✗](bold red)";
+      format = builtins.concatStringsSep "" [
+        "[](red)"
+        "$os"
+        "$username"
+        "[](bg:peach fg:red)"
+        "$directory"
+        "[](bg:yellow fg:peach)"
+        "$git_branch"
+        "$git_status"
+        "[](fg:yellow bg:green)"
+        "$c"
+        "$rust"
+        "$golang"
+        "$nodejs"
+        "$bun"
+        "$php"
+        "$java"
+        "$kotlin"
+        "$haskell"
+        "$python"
+        "$nix_shell"
+        "[](fg:green bg:sapphire)"
+        "$conda"
+        "[](fg:sapphire bg:lavender)"
+        "$time"
+        "[ ](fg:lavender)"
+        "$cmd_duration"
+        "$line_break"
+        "$character"
+      ];
+
+      palette = "catppuccin_mocha";
+
+      os = {
+        disabled = false;
+        style = "bg:red fg:crust";
+        symbols = {
+          NixOS = " ";
+          Linux = "󰌽 ";
+          Windows = " ";
+          Ubuntu = "󰕈 ";
+          Arch = "󰣇 ";
+          Debian = "󰣚 ";
+          Fedora = "󰣛 ";
+        };
       };
-      git_branch = {
-        symbol = " ";
-        style = "bold purple";
+
+      username = {
+        show_always = true;
+        style_user = "bg:red fg:crust";
+        style_root = "bg:red fg:crust";
+        format = "[ $user]($style)";
       };
-      git_status = {
-        style = "bold red";
-      };
-      nix_shell = {
-        symbol = " ";
-        style = "bold blue";
-      };
+
       directory = {
-        style = "bold cyan";
+        style = "bg:peach fg:crust";
+        format = "[ $path ]($style)";
         truncation_length = 3;
-        truncate_to_repo = true;
+        truncation_symbol = "…/";
+        substitutions = {
+          "Documents" = "󰈙 ";
+          "Downloads" = " ";
+          "Music" = "󰝚 ";
+          "Pictures" = " ";
+          "Dotfiles" = "󱁤 Dotfiles";
+        };
+      };
+
+      git_branch = {
+        symbol = "";
+        style = "bg:yellow";
+        format = "[[ $symbol $branch ](fg:crust bg:yellow)]($style)";
+      };
+
+      git_status = {
+        style = "bg:yellow";
+        format = "[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)";
+      };
+
+      nodejs = {
+        symbol = "";
+        style = "bg:green";
+        format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)";
+      };
+
+      bun = {
+        symbol = "";
+        style = "bg:green";
+        format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)";
+      };
+
+      rust = {
+        symbol = "";
+        style = "bg:green";
+        format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)";
+      };
+
+      golang = {
+        symbol = "";
+        style = "bg:green";
+        format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)";
+      };
+
+      python = {
+        symbol = "";
+        style = "bg:green";
+        format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)";
+      };
+
+      nix_shell = {
+        symbol = "";
+        style = "bg:green";
+        format = "[[ $symbol( $state) ](fg:crust bg:green)]($style)";
+      };
+
+      time = {
+        disabled = false;
+        time_format = "%R";
+        style = "bg:lavender";
+        format = "[[  $time ](fg:crust bg:lavender)]($style)";
+      };
+
+      line_break = {
+        disabled = false;
+      };
+
+      character = {
+        disabled = false;
+        success_symbol = "[❯](bold fg:green)";
+        error_symbol = "[❯](bold fg:red)";
+        vimcmd_symbol = "[❮](bold fg:green)";
+      };
+
+      cmd_duration = {
+        show_milliseconds = true;
+        format = " in $duration ";
+        style = "fg:lavender";
+        disabled = false;
+      };
+
+      palettes.catppuccin_mocha = {
+        rosewater = "#f5e0dc";
+        flamingo = "#f2cdcd";
+        pink = "#f5c2e7";
+        mauve = "#cba6f7";
+        red = "#f38ba8";
+        maroon = "#eba0ac";
+        peach = "#fab387";
+        yellow = "#f9e2af";
+        green = "#a6e3a1";
+        teal = "#94e2d5";
+        sky = "#89dceb";
+        sapphire = "#74c7ec";
+        blue = "#89b4fa";
+        lavender = "#b4befe";
+        text = "#cdd6f4";
+        subtext1 = "#bac2de";
+        subtext0 = "#a6adc8";
+        overlay2 = "#9399b2";
+        overlay1 = "#7f849c";
+        overlay0 = "#6c7086";
+        surface2 = "#585b70";
+        surface1 = "#45475a";
+        surface0 = "#313244";
+        base = "#1e1e2e";
+        mantle = "#181825";
+        crust = "#11111b";
       };
     };
   };
