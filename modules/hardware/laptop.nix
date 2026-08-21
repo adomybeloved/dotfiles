@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  boot.resumeDevice = "/dev/disk/by-uuid/b6dcf37b-7882-4f5c-b7b7-8d3ab7129092";
+
   services.power-profiles-daemon.enable = true;
 
   services.upower = {
@@ -14,11 +16,15 @@
   services.logind = {
     settings = {
       Login = {
-        HandlePowerKey = "suspend";
-        HandleLidSwitch = "suspend";
+        HandlePowerKey = "suspend-then-hibernate";
+        HandleLidSwitch = "suspend-then-hibernate";
         HandleLidSwitchExternalPower = "suspend";
       };
     };
+  };
+
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "1h";
   };
 
   services.udev.extraRules = ''
