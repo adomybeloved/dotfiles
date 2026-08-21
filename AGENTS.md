@@ -21,13 +21,13 @@ Dotfiles/
 │   │   ├── boot.nix                # Limine bootloader, kernel, ZRAM, sysctl
 │   │   ├── security.nix            # Polkit, RTKit, sudo
 │   │   ├── network.nix             # NetworkManager
-│   │   ├── sound.nix               # PipeWire
+│   │   ├── sound.nix               # PipeWire, JACK
 │   │   ├── locale.nix              # Timezone, locales
 │   │   ├── fonts.nix               # System fonts (Iosevka, JetBrainsMono, Inter, fontconfig)
 │   │   ├── users.nix               # User accounts and default login shell
 │   │   └── packages.nix            # System packages
 │   └── desktop/
-│       └── plasma.nix              # System-level desktop environment (SDDM, KDE Plasma 6)
+│       └── plasma.nix              # System-level desktop environment (SDDM, KDE Plasma 6, themes)
 ├── home/                           # User-level Home Manager configurations
 │   └── arlecchino/
 │       ├── default.nix             # Main user config aggregator (Catppuccin Mocha theme)
@@ -41,7 +41,8 @@ Dotfiles/
 │       │   └── ghostty.nix         # Ghostty terminal emulator (Iosevka Nerd Font, Catppuccin)
 │       └── programs/
 │           ├── git.nix             # Git, SSH, GitHub CLI, age/sops tools
-│           └── browsers.nix        # Firefox, Zen Browser (default browser)
+│           ├── browsers.nix        # Firefox, Zen Browser (default browser)
+│           └── media.nix           # AyuGram, Vesktop, MPV (GPU-next + uosc), comma, daily tools
 └── secrets/                        # Encrypted secret files managed by sops-nix
 ```
 

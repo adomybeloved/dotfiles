@@ -7,6 +7,7 @@
     ./desktop/plasma.nix
     ./programs/git.nix
     ./programs/browsers.nix
+    ./programs/media.nix
   ];
 
   home.username = "arlecchino";
