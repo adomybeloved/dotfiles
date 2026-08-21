@@ -10,10 +10,6 @@
         source = "builtin";
         builtin = "Catppuccin";
       };
-      lockscreen = {
-        enabled = false;
-        lockBeforeSuspend = false;
-      };
     };
   };
 
@@ -21,16 +17,16 @@
     enable = true;
     timeouts = [
       {
-        timeout = 180;
+        timeout = 300;
         command = "${pkgs.brightnessctl}/bin/brightnessctl -s set 10%";
         resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl -r";
       }
       {
-        timeout = 300;
+        timeout = 600;
         command = "qylock-lock";
       }
       {
-        timeout = 600;
+        timeout = 1200;
         command = "${pkgs.systemd}/bin/systemctl suspend";
       }
     ];
