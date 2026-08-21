@@ -11,5 +11,6 @@
     $DRY_RUN_CMD ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 --file kcminputrc --group Mouse --key PointerAccelerationProfile 1 2>/dev/null || true
     $DRY_RUN_CMD ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 --file kcminputrc --group Touchpad --key PointerAccelerationProfile 1 2>/dev/null || true
     $DRY_RUN_CMD ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 --file kcminputrc --group Touchpad --key PointerAcceleration 0.2 2>/dev/null || true
+    $DRY_RUN_CMD ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 --file kglobalshortcutsrc --group "org.flameshot.Flameshot.desktop" --key "Capture" "Print,Print,Take screenshot with Flameshot" 2>/dev/null || true
   '';
 }
