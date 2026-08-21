@@ -27,10 +27,12 @@ Dotfiles/
 │   │   ├── users.nix               # User accounts and default login shell
 │   │   └── packages.nix            # System packages
 │   └── desktop/
-│       └── plasma.nix              # Desktop environment (SDDM, KDE Plasma 6)
+│       └── plasma.nix              # System-level desktop environment (SDDM, KDE Plasma 6)
 ├── home/                           # User-level Home Manager configurations
 │   └── arlecchino/
 │       ├── default.nix             # Main user config aggregator (Catppuccin Mocha theme)
+│       ├── desktop/
+│       │   └── plasma.nix          # User-level Plasma 6 configuration, themes, activation
 │       ├── shell/
 │       │   ├── default.nix         # Zsh, completion, history, aliases
 │       │   ├── starship.nix        # Starship prompt configuration
