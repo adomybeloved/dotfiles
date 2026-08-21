@@ -23,6 +23,7 @@ Dotfiles/
 │   │   ├── network.nix             # NetworkManager
 │   │   ├── sound.nix               # PipeWire
 │   │   ├── locale.nix              # Timezone, locales
+│   │   ├── fonts.nix               # System fonts (Iosevka, JetBrainsMono, Inter, fontconfig)
 │   │   ├── users.nix               # User accounts
 │   │   └── packages.nix            # System packages
 │   └── desktop/
