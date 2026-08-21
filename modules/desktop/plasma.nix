@@ -13,6 +13,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    kdePackages.qtstyleplugin-kvantum
     (catppuccin-kde.override {
       flavour = [ "mocha" ];
       accents = [ "mauve" ];
