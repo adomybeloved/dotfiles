@@ -34,9 +34,8 @@
         savePath = "/home/arlecchino/Pictures/Screenshots";
         savePathFixed = true;
         showStartupLaunchMessage = false;
-        copyAndCloseAfterUpload = true;
-        copyPathAfterSave = false;
         saveAfterCopy = true;
+        copyPathAfterSave = false;
         disabledTrayIcon = false;
       };
     };
