@@ -4,7 +4,6 @@
   imports = [
     ./shell
     ./terminal/ghostty.nix
-    ./desktop/plasma.nix
     ./desktop/niri.nix
     ./programs/git.nix
     ./programs/browsers.nix
@@ -29,7 +28,6 @@
 
   home.packages = with pkgs; [
     antigravity-ide
-    kdePackages.kate
   ];
 
   programs.home-manager.enable = true;

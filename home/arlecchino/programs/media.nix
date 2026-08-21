@@ -47,14 +47,14 @@
     flameshot
     yt-dlp
     imv
+    zathura
+    file-roller
+    qalculate-gtk
     comma
     wl-clipboard
     brightnessctl
     grim
     slurp
-    kdePackages.okular
-    kdePackages.ark
-    kdePackages.kcalc
     p7zip
     unzip
   ];

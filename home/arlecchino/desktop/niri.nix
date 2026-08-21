@@ -73,8 +73,10 @@
       Mod+Return { spawn "ghostty"; }
       Mod+T { spawn "ghostty"; }
       Mod+B { spawn "zen"; }
-      Mod+Space { spawn "noctalia" "launcher"; }
-      Mod+D { spawn "noctalia" "launcher"; }
+      Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+      Mod+D { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+      Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
+      Mod+N { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
 
       Mod+Q { close-window; }
       Mod+Shift+E { quit; }

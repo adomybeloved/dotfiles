@@ -12,7 +12,7 @@ Dotfiles/
 ├── AGENTS.md                       # Guidelines for AI assistants
 ├── hosts/                          # Machine-specific host configurations
 │   └── laptop/
-│       ├── default.nix             # Host definition (imports hardware, core, desktop)
+│       ├── default.nix             # Host definition (imports hardware, core, desktop/niri)
 │       └── hardware-configuration.nix
 ├── modules/                        # System-level NixOS modules
 │   ├── core/
@@ -27,13 +27,11 @@ Dotfiles/
 │   │   ├── users.nix               # User accounts and default login shell
 │   │   └── packages.nix            # System packages
 │   └── desktop/
-│       ├── plasma.nix              # System-level desktop environment (SDDM, KDE Plasma 6, themes)
-│       └── niri.nix                # System-level Niri compositor, portals, Noctalia services
+│       └── niri.nix                # System-level Niri compositor, SDDM, portals, Noctalia services
 ├── home/                           # User-level Home Manager configurations
 │   └── arlecchino/
 │       ├── default.nix             # Main user config aggregator (Catppuccin Mocha theme)
 │       ├── desktop/
-│       │   ├── plasma.nix          # User-level Plasma 6 configuration, themes, activation
 │       │   └── niri.nix            # User-level Niri scrollable tiling configuration, Noctalia shell
 │       ├── shell/
 │       │   ├── default.nix         # Zsh, completion, history, aliases

@@ -4,7 +4,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/core
-    ../../modules/desktop/plasma.nix
     ../../modules/desktop/niri.nix
   ];
 
