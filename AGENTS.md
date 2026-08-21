@@ -6,7 +6,7 @@ This repository contains declarative NixOS and Home Manager configurations using
 
 ```text
 Dotfiles/
-├── flake.nix                       # Flake entrypoint (inputs: nixpkgs-unstable, home-manager, sops-nix, zen-browser, catppuccin)
+├── flake.nix                       # Flake entrypoint (inputs: nixpkgs-unstable, home-manager, sops-nix, zen-browser, catppuccin, noctalia)
 ├── flake.lock                      # Flake lockfile
 ├── .sops.yaml                      # SOPS encryption keys and path rules
 ├── AGENTS.md                       # Guidelines for AI assistants
@@ -27,12 +27,14 @@ Dotfiles/
 │   │   ├── users.nix               # User accounts and default login shell
 │   │   └── packages.nix            # System packages
 │   └── desktop/
-│       └── plasma.nix              # System-level desktop environment (SDDM, KDE Plasma 6, themes)
+│       ├── plasma.nix              # System-level desktop environment (SDDM, KDE Plasma 6, themes)
+│       └── niri.nix                # System-level Niri compositor, portals, Noctalia services
 ├── home/                           # User-level Home Manager configurations
 │   └── arlecchino/
 │       ├── default.nix             # Main user config aggregator (Catppuccin Mocha theme)
 │       ├── desktop/
-│       │   └── plasma.nix          # User-level Plasma 6 configuration, themes, activation
+│       │   ├── plasma.nix          # User-level Plasma 6 configuration, themes, activation
+│       │   └── niri.nix            # User-level Niri scrollable tiling configuration, Noctalia shell
 │       ├── shell/
 │       │   ├── default.nix         # Zsh, completion, history, aliases
 │       │   ├── starship.nix        # Starship prompt configuration
@@ -42,7 +44,7 @@ Dotfiles/
 │       └── programs/
 │           ├── git.nix             # Git, SSH, GitHub CLI, age/sops tools
 │           ├── browsers.nix        # Firefox, Zen Browser (default browser)
-│           └── media.nix           # AyuGram, Vesktop, MPV (GPU-next + uosc), comma, daily tools
+│           └── media.nix           # AyuGram, Vesktop, MPV (GPU-next + uosc), Flameshot, comma, daily tools
 └── secrets/                        # Encrypted secret files managed by sops-nix
 ```
 

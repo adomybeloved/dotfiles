@@ -19,9 +19,13 @@
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, catppuccin, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, sops-nix, catppuccin, noctalia, ... }@inputs: {
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -30,6 +34,7 @@
           ./hosts/laptop
           sops-nix.nixosModules.sops
           catppuccin.nixosModules.catppuccin
+          noctalia.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -39,6 +44,7 @@
             home-manager.users.arlecchino = {
               imports = [
                 catppuccin.homeModules.catppuccin
+                noctalia.homeModules.default
                 ./home/arlecchino
               ];
             };

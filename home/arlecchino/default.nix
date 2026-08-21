@@ -5,6 +5,7 @@
     ./shell
     ./terminal/ghostty.nix
     ./desktop/plasma.nix
+    ./desktop/niri.nix
     ./programs/git.nix
     ./programs/browsers.nix
     ./programs/media.nix
