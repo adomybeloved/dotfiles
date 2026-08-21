@@ -27,7 +27,8 @@ Dotfiles/
 │   │   ├── users.nix               # User accounts and default login shell
 │   │   └── packages.nix            # System packages
 │   ├── desktop/
-│   │   └── niri.nix                # System-level Niri compositor, SDDM, portals, Noctalia services, Qylock (Reverse: 1999)
+│   │   ├── niri.nix                # System-level Niri compositor, portals, Noctalia services
+│   │   └── qylock.nix              # Qylock (Reverse: 1999) SDDM theme and GStreamer video codecs
 │   └── hardware/
 │       ├── amd.nix                 # AMD P-State, Mesa graphics
 │       ├── laptop.nix              # Touchpad libinput, power-profiles-daemon, 80% battery threshold
