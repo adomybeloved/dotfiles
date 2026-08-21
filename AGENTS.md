@@ -18,19 +18,27 @@ Dotfiles/
 │   ├── core/
 │   │   ├── default.nix             # Base system aggregator
 │   │   ├── nix.nix                 # Nix daemon settings, GC, store optimization
-│   │   ├── boot.nix                # Limine bootloader, kernel
+│   │   ├── boot.nix                # Limine bootloader, kernel, ZRAM, sysctl
 │   │   ├── security.nix            # Polkit, RTKit, sudo
 │   │   ├── network.nix             # NetworkManager
 │   │   ├── sound.nix               # PipeWire
 │   │   ├── locale.nix              # Timezone, locales
 │   │   ├── fonts.nix               # System fonts (Iosevka, JetBrainsMono, Inter, fontconfig)
-│   │   ├── users.nix               # User accounts
+│   │   ├── users.nix               # User accounts and default login shell
 │   │   └── packages.nix            # System packages
 │   └── desktop/
 │       └── plasma.nix              # Desktop environment (SDDM, KDE Plasma 6)
 ├── home/                           # User-level Home Manager configurations
 │   └── arlecchino/
-│       └── default.nix             # User packages, git, ssh, shell configs
+│       ├── default.nix             # Main user config aggregator
+│       ├── shell/
+│       │   ├── default.nix         # Zsh, completion, history, aliases
+│       │   ├── starship.nix        # Starship prompt configuration
+│       │   └── tools.nix           # Modern CLI tools (zoxide, eza, bat, fzf, direnv, btop, fastfetch, lazygit)
+│       ├── terminal/
+│       │   └── ghostty.nix         # Ghostty terminal emulator (Iosevka Nerd Font, Catppuccin)
+│       └── programs/
+│           └── git.nix             # Git, SSH, GitHub CLI, age/sops tools
 └── secrets/                        # Encrypted secret files managed by sops-nix
 ```
 
