@@ -27,6 +27,21 @@
     enableZshIntegration = true;
   };
 
+  services.flameshot = {
+    enable = true;
+    settings = {
+      General = {
+        savePath = "/home/arlecchino/Pictures/Screenshots";
+        savePathFixed = true;
+        showStartupLaunchMessage = false;
+        copyAndCloseAfterUpload = true;
+        copyPathAfterSave = false;
+        saveAfterCopy = true;
+        disabledTrayIcon = false;
+      };
+    };
+  };
+
   home.packages = with pkgs; [
     ayugram-desktop
     vesktop
@@ -35,9 +50,10 @@
     comma
     wl-clipboard
     brightnessctl
+    grim
+    slurp
     kdePackages.okular
     kdePackages.ark
-    kdePackages.spectacle
     kdePackages.kcalc
     p7zip
     unzip
