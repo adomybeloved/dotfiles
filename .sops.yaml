@@ -1,0 +1,8 @@
+keys:
+  - &user_arlecchino age1sjge76uhwy7yce5jq8mlurmutphtdlj8kmua2gh4xad7jswezy3quwyjcq
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env)$
+    key_groups:
+      - age:
+          - *user_arlecchino
