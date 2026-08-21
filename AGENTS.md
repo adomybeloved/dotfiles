@@ -18,7 +18,7 @@ Dotfiles/
 │   ├── core/
 │   │   ├── default.nix             # Base system aggregator
 │   │   ├── nix.nix                 # Nix daemon settings, GC, store optimization
-│   │   ├── boot.nix                # Limine bootloader, kernel, ZRAM, sysctl
+│   │   ├── boot.nix                # Limine bootloader, Plymouth (Catppuccin), kernel, ZRAM, sysctl
 │   │   ├── security.nix            # Polkit, RTKit, sudo
 │   │   ├── network.nix             # NetworkManager
 │   │   ├── sound.nix               # PipeWire, JACK
@@ -31,7 +31,7 @@ Dotfiles/
 │   │   └── qylock.nix              # Qylock (Reverse: 1999) SDDM theme and GStreamer video codecs
 │   └── hardware/
 │       ├── amd.nix                 # AMD P-State, Mesa graphics
-│       ├── laptop.nix              # Touchpad libinput, power-profiles-daemon, 80% battery threshold
+│       ├── laptop.nix              # Touchpad libinput, power-profiles-daemon, 80% battery threshold, suspend-then-hibernate
 │       └── bluetooth.nix           # Bluetooth service and powerOnBoot
 ├── home/                           # User-level Home Manager configurations
 │   └── arlecchino/
