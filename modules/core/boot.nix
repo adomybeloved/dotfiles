@@ -13,7 +13,6 @@
   boot.kernelModules = [ "tcp_bbr" ];
 
   boot.kernelParams = [
-    "amd_pstate=active"
     "transparent_hugepage=madvise"
     "split_lock_mitigate=0"
     "nowatchdog"

@@ -20,6 +20,9 @@
           layout "us,ru"
           options "grp:alt_shift_toggle"
         }
+        repeat-delay 200
+        repeat-rate 45
+        track-layout "global"
       }
 
       touchpad {

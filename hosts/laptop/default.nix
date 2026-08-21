@@ -9,6 +9,10 @@
 
   networking.hostName = "laptop";
 
+  boot.kernelParams = [
+    "amd_pstate=active"
+  ];
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
