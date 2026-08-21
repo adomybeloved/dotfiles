@@ -7,7 +7,7 @@
     settings = {
       font-family = "Iosevka Nerd Font";
       font-size = 13;
-      theme = "catppuccin-mocha";
+      theme = "Catppuccin Mocha";
       cursor-style = "block";
       cursor-style-blink = false;
       window-decoration = true;
