@@ -25,6 +25,11 @@
     enable = true;
   };
 
+  home.file.".gtkrc-2.0".force = true;
+  xdg.configFile."gtk-3.0/settings.ini".force = true;
+  xdg.configFile."gtk-4.0/settings.ini".force = true;
+  xdg.configFile."mimeapps.list".force = true;
+
   home.packages = with pkgs; [
     antigravity-ide
     kdePackages.kate
