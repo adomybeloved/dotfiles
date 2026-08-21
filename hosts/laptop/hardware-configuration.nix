@@ -13,18 +13,19 @@
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/1c84b037-e1e3-43e0-a83a-e11913beedd4";
     fsType = "btrfs";
+    options = [ "compress=zstd:1" "noatime" "space_cache=v2" "discard=async" ];
   };
 
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/1c84b037-e1e3-43e0-a83a-e11913beedd4";
     fsType = "btrfs";
-    options = [ "subvol=home" ];
+    options = [ "subvol=home" "compress=zstd:1" "noatime" "space_cache=v2" "discard=async" ];
   };
 
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/1c84b037-e1e3-43e0-a83a-e11913beedd4";
     fsType = "btrfs";
-    options = [ "subvol=nix" ];
+    options = [ "subvol=nix" "compress=zstd:1" "noatime" "space_cache=v2" "discard=async" ];
   };
 
   fileSystems."/boot" = {
