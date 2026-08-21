@@ -12,6 +12,17 @@
   home.homeDirectory = "/home/arlecchino";
   home.stateVersion = "26.05";
 
+  catppuccin = {
+    enable = true;
+    autoEnable = true;
+    flavor = "mocha";
+    accent = "mauve";
+  };
+
+  gtk = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     antigravity-ide
     kdePackages.kate

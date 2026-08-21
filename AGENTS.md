@@ -6,7 +6,7 @@ This repository contains declarative NixOS and Home Manager configurations using
 
 ```text
 Dotfiles/
-├── flake.nix                       # Flake entrypoint (inputs: nixpkgs-unstable, home-manager, sops-nix, zen-browser)
+├── flake.nix                       # Flake entrypoint (inputs: nixpkgs-unstable, home-manager, sops-nix, zen-browser, catppuccin)
 ├── flake.lock                      # Flake lockfile
 ├── .sops.yaml                      # SOPS encryption keys and path rules
 ├── AGENTS.md                       # Guidelines for AI assistants
@@ -30,7 +30,7 @@ Dotfiles/
 │       └── plasma.nix              # Desktop environment (SDDM, KDE Plasma 6)
 ├── home/                           # User-level Home Manager configurations
 │   └── arlecchino/
-│       ├── default.nix             # Main user config aggregator
+│       ├── default.nix             # Main user config aggregator (Catppuccin Mocha theme)
 │       ├── shell/
 │       │   ├── default.nix         # Zsh, completion, history, aliases
 │       │   ├── starship.nix        # Starship prompt configuration
@@ -39,7 +39,7 @@ Dotfiles/
 │       │   └── ghostty.nix         # Ghostty terminal emulator (Iosevka Nerd Font, Catppuccin)
 │       └── programs/
 │           ├── git.nix             # Git, SSH, GitHub CLI, age/sops tools
-│           └── browsers.nix        # Firefox, Zen Browser
+│           └── browsers.nix        # Firefox, Zen Browser (default browser)
 └── secrets/                        # Encrypted secret files managed by sops-nix
 ```
 
