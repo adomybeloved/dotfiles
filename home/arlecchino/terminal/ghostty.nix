@@ -17,4 +17,8 @@
       confirm-close-surface = false;
     };
   };
+
+  home.sessionVariables = {
+    TERMINAL = "ghostty";
+  };
 }
