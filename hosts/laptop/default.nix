@@ -9,5 +9,28 @@
 
   networking.hostName = "laptop";
 
-  services.libinput.enable = true;
+  boot.kernelParams = [
+    "amd_pstate=active"
+  ];
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  services.power-profiles-daemon.enable = true;
+
+  services.libinput = {
+    enable = true;
+    touchpad = {
+      tapping = true;
+      naturalScrolling = true;
+      scrollMethod = "twofinger";
+    };
+  };
 }
