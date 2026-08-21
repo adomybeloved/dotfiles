@@ -6,7 +6,7 @@ This repository contains declarative NixOS and Home Manager configurations using
 
 ```text
 Dotfiles/
-├── flake.nix                       # Flake entrypoint (inputs: nixpkgs-unstable, home-manager, sops-nix)
+├── flake.nix                       # Flake entrypoint (inputs: nixpkgs-unstable, home-manager, sops-nix, zen-browser, helium-browser)
 ├── flake.lock                      # Flake lockfile
 ├── .sops.yaml                      # SOPS encryption keys and path rules
 ├── AGENTS.md                       # Guidelines for AI assistants
@@ -38,7 +38,8 @@ Dotfiles/
 │       ├── terminal/
 │       │   └── ghostty.nix         # Ghostty terminal emulator (Iosevka Nerd Font, Catppuccin)
 │       └── programs/
-│           └── git.nix             # Git, SSH, GitHub CLI, age/sops tools
+│           ├── git.nix             # Git, SSH, GitHub CLI, age/sops tools
+│           └── browsers.nix        # Firefox, Zen Browser, Helium Browser
 └── secrets/                        # Encrypted secret files managed by sops-nix
 ```
 

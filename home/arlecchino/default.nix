@@ -5,6 +5,7 @@
     ./shell
     ./terminal/ghostty.nix
     ./programs/git.nix
+    ./programs/browsers.nix
   ];
 
   home.username = "arlecchino";
@@ -14,7 +15,6 @@
   home.packages = with pkgs; [
     antigravity-ide
     kdePackages.kate
-    firefox
   ];
 
   programs.home-manager.enable = true;
