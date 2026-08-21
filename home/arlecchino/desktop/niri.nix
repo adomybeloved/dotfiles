@@ -13,6 +13,29 @@
     };
   };
 
+  services.swayidle = {
+    enable = true;
+    timeouts = [
+      {
+        timeout = 300;
+        command = "${pkgs.brightnessctl}/bin/brightnessctl -s set 10%";
+        resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl -r";
+      }
+      {
+        timeout = 600;
+        command = "${inputs.noctalia.packages.${pkgs.system}.default}/bin/noctalia msg session lock";
+      }
+      {
+        timeout = 1200;
+        command = "${pkgs.systemd}/bin/systemctl suspend";
+      }
+    ];
+    events = {
+      before-sleep = "${inputs.noctalia.packages.${pkgs.system}.default}/bin/noctalia msg session lock";
+      lock = "${inputs.noctalia.packages.${pkgs.system}.default}/bin/noctalia msg session lock";
+    };
+  };
+
   xdg.configFile."niri/config.kdl".text = ''
     input {
       keyboard {
@@ -80,6 +103,8 @@
       Mod+D { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
       Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
       Mod+N { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
+      Mod+Escape { spawn "noctalia" "msg" "session" "lock"; }
+      Mod+Shift+L { spawn "noctalia" "msg" "session" "lock"; }
 
       Mod+Q { close-window; }
       Mod+Shift+E { quit; }

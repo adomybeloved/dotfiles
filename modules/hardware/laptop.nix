@@ -3,6 +3,38 @@
 {
   services.power-profiles-daemon.enable = true;
 
+  services.upower = {
+    enable = true;
+    percentageLow = 20;
+    percentageCritical = 7;
+    percentageAction = 5;
+    criticalPowerAction = "Hibernate";
+  };
+
+  services.logind = {
+    settings = {
+      Login = {
+        HandlePowerKey = "suspend";
+        HandleLidSwitch = "suspend";
+        HandleLidSwitchExternalPower = "suspend";
+      };
+    };
+  };
+
+  services.udev.extraRules = ''
+    SUBSYSTEM=="power_supply", KERNEL=="BATT", ATTR{charge_control_end_threshold}="80"
+  '';
+
+  systemd.services.battery-charge-threshold = {
+    description = "Set battery charge threshold to 80%";
+    after = [ "multi-user.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'if [ -f /sys/class/power_supply/BATT/charge_control_end_threshold ]; then echo 80 > /sys/class/power_supply/BATT/charge_control_end_threshold; fi'";
+    };
+  };
+
   services.libinput = {
     enable = true;
     touchpad = {
