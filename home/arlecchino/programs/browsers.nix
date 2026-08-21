@@ -38,6 +38,14 @@ let
         install_url = "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislike/latest.xpi";
         installation_mode = "force_installed";
       };
+      "firefox@betterttv.net" = {
+        install_url = "https://addons.mozilla.org/firefox/downloads/latest/betterttv/latest.xpi";
+        installation_mode = "force_installed";
+      };
+      "firefox-extension@steamdb.info" = {
+        install_url = "https://addons.mozilla.org/firefox/downloads/latest/steam-database/latest.xpi";
+        installation_mode = "force_installed";
+      };
     };
     Preferences = {
       "media.ffmpeg.vaapi.enabled" = true;
@@ -55,7 +63,6 @@ in
 {
   imports = [
     inputs.zen-browser.homeModules.default
-    inputs.helium-browser.homeModules.default
   ];
 
   programs.firefox = {
@@ -66,9 +73,5 @@ in
   programs.zen-browser = {
     enable = true;
     policies = sharedPolicies;
-  };
-
-  programs.helium = {
-    enable = true;
   };
 }
