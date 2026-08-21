@@ -3,7 +3,7 @@
 {
   programs.noctalia = {
     enable = true;
-    package = inputs.noctalia.packages.${pkgs.system}.default;
+    package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
     settings = {
       theme = {
         mode = "dark";
@@ -23,7 +23,7 @@
       }
       {
         timeout = 600;
-        command = "${inputs.noctalia.packages.${pkgs.system}.default}/bin/noctalia msg session lock";
+        command = "${inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/noctalia msg session lock";
       }
       {
         timeout = 1200;
@@ -31,8 +31,8 @@
       }
     ];
     events = {
-      before-sleep = "${inputs.noctalia.packages.${pkgs.system}.default}/bin/noctalia msg session lock";
-      lock = "${inputs.noctalia.packages.${pkgs.system}.default}/bin/noctalia msg session lock";
+      before-sleep = "${inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/noctalia msg session lock";
+      lock = "${inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/noctalia msg session lock";
     };
   };
 
