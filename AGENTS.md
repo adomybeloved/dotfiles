@@ -6,7 +6,7 @@ This repository contains declarative NixOS and Home Manager configurations using
 
 ```text
 Dotfiles/
-├── flake.nix                       # Flake entrypoint (inputs: nixpkgs-unstable, home-manager, sops-nix, zen-browser, catppuccin, noctalia, qylock)
+├── flake.nix                       # Flake entrypoint (inputs: nixpkgs-unstable, home-manager, sops-nix, zen-browser, noctalia, qylock)
 ├── flake.lock                      # Flake lockfile
 ├── .sops.yaml                      # SOPS encryption keys and path rules
 ├── AGENTS.md                       # Guidelines for AI assistants
@@ -18,7 +18,7 @@ Dotfiles/
 │   ├── core/
 │   │   ├── default.nix             # Base system aggregator
 │   │   ├── nix.nix                 # Nix daemon settings, GC, store optimization
-│   │   ├── boot.nix                # Limine bootloader, Plymouth (Catppuccin), kernel, ZRAM, sysctl
+│   │   ├── boot.nix                # Limine bootloader, Plymouth, kernel, ZRAM, sysctl
 │   │   ├── security.nix            # Polkit, RTKit, sudo
 │   │   ├── network.nix             # NetworkManager
 │   │   ├── sound.nix               # PipeWire, JACK
@@ -28,27 +28,27 @@ Dotfiles/
 │   │   ├── packages.nix            # System packages
 │   │   └── docker.nix              # Docker daemon (Btrfs storage driver), autoPrune
 │   ├── desktop/
-│   │   ├── niri.nix                # System-level Niri compositor, portals, Noctalia services
+│   │   ├── niri.nix                # System-level Niri compositor, portals, Noctalia services, Kanagawa icons
 │   │   └── qylock.nix              # Qylock (Reverse: 1999) SDDM theme and GStreamer video codecs
 │   └── hardware/
-│       ├── amd.nix                 # AMD P-State, Mesa graphics
+│       ├── amd.nix                 # AMD P-State, early KMS amdgpu, Mesa graphics
 │       ├── laptop.nix              # Touchpad libinput, power-profiles-daemon, 80% battery threshold, suspend-then-hibernate
 │       └── bluetooth.nix           # Bluetooth service and powerOnBoot
 ├── home/                           # User-level Home Manager configurations
 │   └── arlecchino/
-│       ├── default.nix             # Main user config aggregator (Catppuccin Mocha theme)
+│       ├── default.nix             # Main user config aggregator (Kanagawa Wave dark theme, GTK, Bibata cursors)
 │       ├── desktop/
-│       │   └── niri.nix            # User-level Niri scrollable tiling configuration, Noctalia shell, Qylock lockscreen
+│       │   └── niri.nix            # User-level Niri scrollable tiling (Kanagawa borders), Noctalia shell, Qylock lockscreen
 │       ├── shell/
 │       │   ├── default.nix         # Zsh, completion, history, aliases
-│       │   ├── starship.nix        # Starship prompt configuration
-│       │   └── tools.nix           # Modern CLI tools (zoxide, eza, bat, fzf, direnv, btop, fastfetch, lazygit)
+│       │   ├── starship.nix        # Starship prompt configuration (Kanagawa palette)
+│       │   └── tools.nix           # Modern CLI tools (zoxide, eza, bat, fzf Kanagawa, direnv, btop, fastfetch, lazygit)
 │       ├── terminal/
-│       │   └── ghostty.nix         # Ghostty terminal emulator (Iosevka Nerd Font, Catppuccin)
+│       │   └── ghostty.nix         # Ghostty terminal emulator (Kanagawa Wave, Iosevka Nerd Font)
 │       └── programs/
 │           ├── git.nix             # Git, SSH, GitHub CLI, age/sops tools
 │           ├── browsers.nix        # Firefox, Zen Browser (default browser)
-│           └── media.nix           # AyuGram, Vesktop, MPV (GPU-next + uosc), Flameshot, comma, daily tools
+│           ├── media.nix           # AyuGram, Vesktop, MPV (GPU-next + uosc), Flameshot, comma, daily tools
 │           └── dev.nix             # Bun, Node, Corepack, Python (uv), Rust, Go, Termius, Bruno
 └── secrets/                        # Encrypted secret files managed by sops-nix
 ```

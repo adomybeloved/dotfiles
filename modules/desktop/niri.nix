@@ -27,26 +27,11 @@
     ];
   };
 
-  catppuccin = {
-    enable = true;
-    autoEnable = true;
-    flavor = "mocha";
-    accent = "mauve";
-    sddm.enable = false;
-  };
-
   environment.systemPackages = with pkgs; [
-    catppuccin-cursors.mochaMauve
-    catppuccin-cursors.mochaDark
-    (catppuccin-gtk.override {
-      accents = [ "mauve" ];
-      size = "standard";
-      variant = "mocha";
-    })
-    (catppuccin-papirus-folders.override {
-      flavor = "mocha";
-      accent = "mauve";
-    })
+    bibata-cursors
+    kanagawa-icon-theme
+    adw-gtk3
+    papirus-icon-theme
   ];
 
   security.polkit.enable = true;

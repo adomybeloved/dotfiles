@@ -6,15 +6,15 @@
     enableZshIntegration = true;
     settings = {
       format = builtins.concatStringsSep "" [
-        "[](red)"
+        "[](oniViolet)"
         "$os"
         "$username"
-        "[](bg:peach fg:red)"
+        "[](bg:crystalBlue fg:oniViolet)"
         "$directory"
-        "[](bg:yellow fg:peach)"
+        "[](bg:carpYellow fg:crystalBlue)"
         "$git_branch"
         "$git_status"
-        "[](fg:yellow bg:green)"
+        "[](fg:carpYellow bg:springGreen)"
         "$c"
         "$rust"
         "$golang"
@@ -26,21 +26,21 @@
         "$haskell"
         "$python"
         "$nix_shell"
-        "[](fg:green bg:sapphire)"
+        "[](fg:springGreen bg:waveAqua)"
         "$conda"
-        "[](fg:sapphire bg:lavender)"
+        "[](fg:waveAqua bg:oniViolet2)"
         "$time"
-        "[ ](fg:lavender)"
+        "[ ](fg:oniViolet2)"
         "$cmd_duration"
         "$line_break"
         "$character"
       ];
 
-      palette = "catppuccin_mocha";
+      palette = "kanagawa";
 
       os = {
         disabled = false;
-        style = "bg:red fg:crust";
+        style = "bg:oniViolet fg:sumiInk1";
         symbols = {
           NixOS = " ";
           Linux = "󰌽 ";
@@ -54,13 +54,13 @@
 
       username = {
         show_always = true;
-        style_user = "bg:red fg:crust";
-        style_root = "bg:red fg:crust";
+        style_user = "bg:oniViolet fg:sumiInk1";
+        style_root = "bg:oniViolet fg:sumiInk1";
         format = "[ $user]($style)";
       };
 
       directory = {
-        style = "bg:peach fg:crust";
+        style = "bg:crystalBlue fg:sumiInk1";
         format = "[ $path ]($style)";
         truncation_length = 3;
         truncation_symbol = "…/";
@@ -75,56 +75,56 @@
 
       git_branch = {
         symbol = "";
-        style = "bg:yellow";
-        format = "[[ $symbol $branch ](fg:crust bg:yellow)]($style)";
+        style = "bg:carpYellow";
+        format = "[[ $symbol $branch ](fg:sumiInk1 bg:carpYellow)]($style)";
       };
 
       git_status = {
-        style = "bg:yellow";
-        format = "[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)";
+        style = "bg:carpYellow";
+        format = "[[($all_status$ahead_behind )](fg:sumiInk1 bg:carpYellow)]($style)";
       };
 
       nodejs = {
         symbol = "";
-        style = "bg:green";
-        format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)";
+        style = "bg:springGreen";
+        format = "[[ $symbol( $version) ](fg:sumiInk1 bg:springGreen)]($style)";
       };
 
       bun = {
         symbol = "";
-        style = "bg:green";
-        format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)";
+        style = "bg:springGreen";
+        format = "[[ $symbol( $version) ](fg:sumiInk1 bg:springGreen)]($style)";
       };
 
       rust = {
         symbol = "";
-        style = "bg:green";
-        format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)";
+        style = "bg:springGreen";
+        format = "[[ $symbol( $version) ](fg:sumiInk1 bg:springGreen)]($style)";
       };
 
       golang = {
         symbol = "";
-        style = "bg:green";
-        format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)";
+        style = "bg:springGreen";
+        format = "[[ $symbol( $version) ](fg:sumiInk1 bg:springGreen)]($style)";
       };
 
       python = {
         symbol = "";
-        style = "bg:green";
-        format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)";
+        style = "bg:springGreen";
+        format = "[[ $symbol( $version) ](fg:sumiInk1 bg:springGreen)]($style)";
       };
 
       nix_shell = {
         symbol = "";
-        style = "bg:green";
-        format = "[[ $symbol( $state) ](fg:crust bg:green)]($style)";
+        style = "bg:springGreen";
+        format = "[[ $symbol( $state) ](fg:sumiInk1 bg:springGreen)]($style)";
       };
 
       time = {
         disabled = false;
         time_format = "%R";
-        style = "bg:lavender";
-        format = "[[  $time ](fg:crust bg:lavender)]($style)";
+        style = "bg:oniViolet2";
+        format = "[[  $time ](fg:sumiInk1 bg:oniViolet2)]($style)";
       };
 
       line_break = {
@@ -133,45 +133,38 @@
 
       character = {
         disabled = false;
-        success_symbol = "[❯](bold fg:green)";
-        error_symbol = "[❯](bold fg:red)";
-        vimcmd_symbol = "[❮](bold fg:green)";
+        success_symbol = "[❯](bold fg:oniViolet)";
+        error_symbol = "[❯](bold fg:waveRed)";
+        vimcmd_symbol = "[❮](bold fg:springGreen)";
       };
 
       cmd_duration = {
         show_milliseconds = true;
         format = " in $duration ";
-        style = "fg:lavender";
+        style = "fg:oniViolet";
         disabled = false;
       };
 
-      palettes.catppuccin_mocha = {
-        rosewater = "#f5e0dc";
-        flamingo = "#f2cdcd";
-        pink = "#f5c2e7";
-        mauve = "#cba6f7";
-        red = "#f38ba8";
-        maroon = "#eba0ac";
-        peach = "#fab387";
-        yellow = "#f9e2af";
-        green = "#a6e3a1";
-        teal = "#94e2d5";
-        sky = "#89dceb";
-        sapphire = "#74c7ec";
-        blue = "#89b4fa";
-        lavender = "#b4befe";
-        text = "#cdd6f4";
-        subtext1 = "#bac2de";
-        subtext0 = "#a6adc8";
-        overlay2 = "#9399b2";
-        overlay1 = "#7f849c";
-        overlay0 = "#6c7086";
-        surface2 = "#585b70";
-        surface1 = "#45475a";
-        surface0 = "#313244";
-        base = "#1e1e2e";
-        mantle = "#181825";
-        crust = "#11111b";
+      palettes.kanagawa = {
+        sumiInk0 = "#16161D";
+        sumiInk1 = "#1F1F28";
+        sumiInk2 = "#2A2A37";
+        sumiInk3 = "#363646";
+        sumiInk4 = "#54546D";
+        fujiWhite = "#DCD7BA";
+        fujiGray = "#727169";
+        oniViolet = "#957FB8";
+        oniViolet2 = "#B8B4D0";
+        crystalBlue = "#7E9CD8";
+        springBlue = "#7FB4CA";
+        waveAqua = "#7AA89F";
+        springGreen = "#98BB6C";
+        boatYellow = "#C0A36E";
+        carpYellow = "#E6C384";
+        surimiOrange = "#FFA066";
+        waveRed = "#E46876";
+        samuraiRed = "#E82424";
+        sakuraPink = "#D27E99";
       };
     };
   };

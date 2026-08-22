@@ -15,10 +15,6 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin = {
-      url = "github:catppuccin/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,14 +25,13 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, catppuccin, noctalia, qylock, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, sops-nix, noctalia, qylock, ... }@inputs: {
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/laptop
           sops-nix.nixosModules.sops
-          catppuccin.nixosModules.catppuccin
           noctalia.nixosModules.default
           qylock.nixosModules.default
           home-manager.nixosModules.home-manager
@@ -47,7 +42,6 @@
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.arlecchino = {
               imports = [
-                catppuccin.homeModules.catppuccin
                 noctalia.homeModules.default
                 ./home/arlecchino
               ];
