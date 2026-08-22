@@ -3,7 +3,7 @@
 {
   imports = [
     ../common
-    ./desktop/niri.nix
+    ./desktop
   ];
 
   home.username = "arlecchino";

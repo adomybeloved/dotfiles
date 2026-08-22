@@ -43,18 +43,20 @@ Dotfiles/
 │   │   ├── shell/
 │   │   │   ├── default.nix         # Zsh, completion, history, aliases
 │   │   │   ├── starship.nix        # Starship prompt (Kanagawa capsules)
-│   │   │   └── tools.nix           # Modern CLI tools (zoxide, eza, bat, fzf Kanagawa, direnv, btop, fastfetch, lazygit)
+│   │   │   └── tools.nix           # Modern CLI tools (zoxide, eza, bat, btop, fzf, fastfetch, lazygit, yazi)
 │   │   ├── terminal/
 │   │   │   └── ghostty.nix         # Ghostty terminal emulator (Kanagawa Wave, Iosevka Nerd Font)
 │   │   └── programs/
 │   │       ├── dev.nix             # Bun, Node, pnpm, Python (uv), Rust, Go, Docker CLI, Termius, Bruno, sshfs
 │   │       ├── browsers.nix        # Zen Browser, Firefox
-│   │       ├── media.nix           # AyuGram, Vesktop, MPV (uosc), Flameshot, comma, daily tools
+│   │       ├── media.nix           # AyuGram, Vesktop, MPV (uosc), Zathura, Flameshot, daily tools
 │   │       └── git.nix             # Git base settings, SSH agent, age/sops tools
 │   └── arlecchino/                 # User profile: Aleksandra Mironova
-│       ├── default.nix             # Imports home/common + personal config
+│       ├── default.nix             # Imports home/common + desktop aggregator
 │       └── desktop/
-│           └── niri.nix            # User-level Niri scrollable tiling (Kanagawa borders), Noctalia shell, Qylock lockscreen
+│           ├── default.nix         # Desktop aggregator (niri + noctalia)
+│           ├── niri.nix            # User-level Niri scrollable tiling (Kanagawa borders), Swayidle, Qylock lockscreen
+│           └── noctalia.nix        # Noctalia status bar, app launcher & control center (Kanagawa palette)
 └── secrets/                        # Encrypted secret files managed by sops-nix
 ```
 
