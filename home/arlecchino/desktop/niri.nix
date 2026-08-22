@@ -75,6 +75,11 @@
       }
     }
 
+    cursor {
+      xcursor-theme "phinger-cursors-dark"
+      xcursor-size 24
+    }
+
     output "eDP-1" {
       scale 1.0
     }

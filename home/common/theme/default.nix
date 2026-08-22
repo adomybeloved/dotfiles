@@ -1,6 +1,15 @@
 { config, pkgs, ... }:
 
 {
+  home.pointerCursor = {
+    enable = true;
+    name = "phinger-cursors-dark";
+    package = pkgs.phinger-cursors;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
   gtk = {
     enable = true;
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
