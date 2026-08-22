@@ -35,21 +35,25 @@ Dotfiles/
 │       ├── laptop.nix              # Touchpad libinput, power-profiles-daemon, 80% battery threshold, suspend-then-hibernate
 │       └── bluetooth.nix           # Bluetooth service and powerOnBoot
 ├── home/                           # User-level Home Manager configurations
-│   └── arlecchino/
-│       ├── default.nix             # Main user config aggregator (Kanagawa Wave dark theme, GTK, Bibata cursors)
-│       ├── desktop/
-│       │   └── niri.nix            # User-level Niri scrollable tiling (Kanagawa borders), Noctalia shell, Qylock lockscreen
-│       ├── shell/
-│       │   ├── default.nix         # Zsh, completion, history, aliases
-│       │   ├── starship.nix        # Starship prompt configuration (Kanagawa palette)
-│       │   └── tools.nix           # Modern CLI tools (zoxide, eza, bat, fzf Kanagawa, direnv, btop, fastfetch, lazygit)
-│       ├── terminal/
-│       │   └── ghostty.nix         # Ghostty terminal emulator (Kanagawa Wave, Iosevka Nerd Font)
-│       └── programs/
-│           ├── git.nix             # Git, SSH, GitHub CLI, age/sops tools
-│           ├── browsers.nix        # Firefox, Zen Browser (default browser)
-│           ├── media.nix           # AyuGram, Vesktop, MPV (GPU-next + uosc), Flameshot, comma, daily tools
-│           └── dev.nix             # Bun, Node, Corepack, Python (uv), Rust, Go, Termius, Bruno
+│   ├── common/                     # Shared configurations for ANY user on ANY machine
+│   │   ├── default.nix             # Common user aggregator
+│   │   ├── theme/
+│   │   │   └── default.nix         # Kanagawa GTK (adw-gtk3-dark), Qt, phinger-cursors-dark, dconf
+│   │   ├── shell/
+│   │   │   ├── default.nix         # Zsh, completion, history, aliases
+│   │   │   ├── starship.nix        # Starship prompt (Kanagawa capsules)
+│   │   │   └── tools.nix           # Modern CLI tools (zoxide, eza, bat, fzf Kanagawa, direnv, btop, fastfetch, lazygit)
+│   │   ├── terminal/
+│   │   │   └── ghostty.nix         # Ghostty terminal emulator (Kanagawa Wave, Iosevka Nerd Font)
+│   │   └── programs/
+│   │       ├── dev.nix             # Bun, Node, pnpm, Python (uv), Rust, Go, Docker CLI, Termius, Bruno, sshfs
+│   │       ├── browsers.nix        # Zen Browser, Firefox
+│   │       ├── media.nix           # AyuGram, Vesktop, MPV (uosc), Flameshot, comma, daily tools
+│   │       └── git.nix             # Git base settings, SSH agent, age/sops tools
+│   └── arlecchino/                 # User profile: Aleksandra Mironova
+│       ├── default.nix             # Imports home/common + personal config
+│       └── desktop/
+│           └── niri.nix            # User-level Niri scrollable tiling (Kanagawa borders), Noctalia shell, Qylock lockscreen
 └── secrets/                        # Encrypted secret files managed by sops-nix
 ```
 
@@ -65,7 +69,7 @@ Dotfiles/
 - Always target `nixos-unstable` for package sources.
 
 ### 3. Architecture Principles
-- **System vs User**: Place system-wide services and hardware configuration in `modules/` or `hosts/`. Place user tools, terminal configs, CLI utilities, and dotfiles in `home/<username>/`.
+- **System vs User**: Place system-wide services and hardware configuration in `modules/` or `hosts/`. Place shared user tools, terminal configs, CLI utilities, and dotfiles in `home/common/`. Place user-specific profiles in `home/<username>/`.
 - **Bootloader**: The repository uses `boot.loader.limine` (with EFI support and generation management). Do not enable `systemd-boot` or `grub` alongside it.
 - **Secrets**: Use `sops-nix` with Age/SSH encryption for sensitive data. Store encrypted files in `secrets/` and reference them declaratively.
 

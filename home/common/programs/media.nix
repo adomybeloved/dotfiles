@@ -31,7 +31,7 @@
     enable = true;
     settings = {
       General = {
-        savePath = "/home/arlecchino/Pictures/Screenshots";
+        savePath = "${config.home.homeDirectory}/Pictures/Screenshots";
         savePathFixed = true;
         showStartupLaunchMessage = false;
         saveAfterCopy = true;

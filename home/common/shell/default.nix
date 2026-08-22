@@ -29,7 +29,10 @@
       find = "fd";
       top = "btop";
       lg = "lazygit";
+      ld = "lazydocker";
+      dco = "docker compose";
       ff = "fastfetch";
+      py = "python3";
       nswitch = "sudo nixos-rebuild switch --flake ~/Dotfiles#laptop";
       ntest = "nixos-rebuild dry-build --flake ~/Dotfiles#laptop";
     };
