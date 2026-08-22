@@ -11,9 +11,9 @@
 
 ## Overview
 
-Personal workstation configuration for daily driving and development on bare-metal hardware (Honor MagicBook 16, AMD Ryzen). Built around the Niri scrollable tiling compositor, Noctalia shell, and the Kanagawa Wave color palette.
+Personal workstation configuration for daily driving and development on bare-metal hardware (Honor MagicBook 14, AMD Ryzen). Built around the Niri scrollable tiling compositor, Noctalia shell, and the Kanagawa Wave color palette.
 
-Developed collaboratively with AI agents (Google Antigravity), tested and verified directly on physical hardware, strictly adhering to modern NixOS modular architecture conventions.
+Developed collaboratively with AI agents, tested and verified directly on physical hardware, strictly adhering to modern NixOS modular architecture conventions.
 
 ---
 
