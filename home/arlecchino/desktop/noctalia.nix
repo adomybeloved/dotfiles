@@ -23,6 +23,35 @@
         source = "custom";
         custom = "kanagawa";
       };
+      desktop_widgets = {
+        enabled = false;
+      };
+      bar = {
+        default = {
+          position = "top";
+          thickness = 34;
+          padding = 12;
+          widget_spacing = 8;
+          radius = 12;
+          background_opacity = 0.92;
+          start = [
+            "launcher"
+            "workspaces"
+          ];
+          center = [
+            "clock"
+          ];
+          end = [
+            "media"
+            "tray"
+            "notifications"
+            "volume"
+            "brightness"
+            "battery"
+            "control-center"
+          ];
+        };
+      };
     };
   };
 }
