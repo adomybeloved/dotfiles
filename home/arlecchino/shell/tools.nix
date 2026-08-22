@@ -44,6 +44,84 @@
     nix-direnv.enable = true;
   };
 
+  xdg.configFile."fastfetch/config.jsonc".text = ''
+    {
+      "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+      "logo": {
+        "type": "small",
+        "padding": {
+          "top": 1,
+          "left": 2,
+          "right": 3
+        }
+      },
+      "display": {
+        "separator": " 󰄾 "
+      },
+      "modules": [
+        "title",
+        "separator",
+        {
+          "type": "os",
+          "key": "󱄅 OS",
+          "keyColor": "magenta"
+        },
+        {
+          "type": "host",
+          "key": "󰌢 Host",
+          "keyColor": "blue"
+        },
+        {
+          "type": "kernel",
+          "key": "󰌽 Kernel",
+          "keyColor": "cyan"
+        },
+        {
+          "type": "uptime",
+          "key": "󰅐 Uptime",
+          "keyColor": "green"
+        },
+        {
+          "type": "wm",
+          "key": "󱂬 WM",
+          "keyColor": "yellow"
+        },
+        {
+          "type": "terminal",
+          "key": " Terminal",
+          "keyColor": "magenta"
+        },
+        {
+          "type": "shell",
+          "key": "󰞷 Shell",
+          "keyColor": "blue"
+        },
+        {
+          "type": "cpu",
+          "key": "󰍛 CPU",
+          "keyColor": "cyan"
+        },
+        {
+          "type": "gpu",
+          "key": "󰢮 GPU",
+          "keyColor": "green"
+        },
+        {
+          "type": "memory",
+          "key": "󰑭 Memory",
+          "keyColor": "yellow"
+        },
+        {
+          "type": "battery",
+          "key": "󰂁 Battery",
+          "keyColor": "green"
+        },
+        "break",
+        "colors"
+      ]
+    }
+  '';
+
   home.packages = with pkgs; [
     ripgrep
     fd

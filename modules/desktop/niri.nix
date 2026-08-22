@@ -28,7 +28,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    bibata-cursors
+    phinger-cursors
     kanagawa-icon-theme
     adw-gtk3
     papirus-icon-theme

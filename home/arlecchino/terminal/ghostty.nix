@@ -10,6 +10,9 @@
       theme = "Kanagawa Wave";
       cursor-style = "block";
       cursor-style-blink = false;
+      cursor-color = "#E6C384";
+      selection-background = "#2D4F67";
+      selection-foreground = "#DCD7BA";
       window-decoration = false;
       window-padding-x = 12;
       window-padding-y = 10;
