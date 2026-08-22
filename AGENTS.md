@@ -12,7 +12,7 @@ Dotfiles/
 ├── AGENTS.md                       # Guidelines for AI assistants
 ├── hosts/                          # Machine-specific host configurations
 │   └── laptop/
-│       ├── default.nix             # Host definition (imports hardware-config, core, desktop/niri, desktop/plymouth, hardware/*)
+│       ├── default.nix             # Host definition (imports hardware-config, core, desktop/*, hardware/*)
 │       └── hardware-configuration.nix
 ├── modules/                        # System-level NixOS modules
 │   ├── core/
@@ -25,15 +25,16 @@ Dotfiles/
 │   │   ├── locale.nix              # Timezone, locales
 │   │   ├── fonts.nix               # System fonts (Iosevka, JetBrainsMono, Inter, fontconfig)
 │   │   ├── users.nix               # User accounts and default login shell
-│   │   ├── packages.nix            # System packages
+│   │   ├── packages.nix            # System packages, udisks2, external filesystem drivers
 │   │   └── docker.nix              # Docker daemon (Btrfs storage driver), autoPrune
 │   ├── desktop/
 │   │   ├── niri.nix                # System-level Niri compositor, portals, Noctalia services, Kanagawa icons
 │   │   ├── plymouth.nix            # Optional Plymouth boot splash (circle_alt theme, quiet boot)
+│   │   ├── gaming.nix              # Steam, 32-bit Mesa, GameMode, gamescope, vm.max_map_count
 │   │   └── qylock.nix              # Qylock (Reverse: 1999) SDDM theme and GStreamer video codecs
 │   └── hardware/
 │       ├── amd.nix                 # AMD P-State, early KMS amdgpu, Mesa graphics
-│       ├── laptop.nix              # Touchpad libinput, power-profiles-daemon, 80% battery threshold, suspend-then-hibernate
+│       ├── laptop.nix              # Touchpad libinput, Kanata CapsLock dual-role key, battery threshold, suspend-then-hibernate
 │       └── bluetooth.nix           # Bluetooth service and powerOnBoot
 ├── home/                           # User-level Home Manager configurations
 │   ├── common/                     # Shared configurations for ANY user on ANY machine
@@ -41,22 +42,23 @@ Dotfiles/
 │   │   ├── theme/
 │   │   │   └── default.nix         # Kanagawa GTK (adw-gtk3-dark), Qt, phinger-cursors-dark, dconf
 │   │   ├── shell/
-│   │   │   ├── default.nix         # Zsh, completion, history, aliases
+│   │   │   ├── default.nix         # Zsh, completion, history, aliases (nclean, nupdate)
 │   │   │   ├── starship.nix        # Starship prompt (Kanagawa capsules)
-│   │   │   └── tools.nix           # Modern CLI tools (zoxide, eza, bat, btop, fzf, fastfetch, lazygit, yazi)
+│   │   │   └── tools.nix           # Modern CLI tools (zoxide, eza, bat, btop Kanagawa, lazygit Kanagawa, yazi)
 │   │   ├── terminal/
 │   │   │   └── ghostty.nix         # Ghostty terminal emulator (Kanagawa Wave, Iosevka Nerd Font)
 │   │   └── programs/
 │   │       ├── dev.nix             # Bun, Node, pnpm, Python (uv), Rust, Go, Docker CLI, Termius, Bruno, sshfs
-│   │       ├── browsers.nix        # Zen Browser, Firefox
-│   │       ├── media.nix           # AyuGram, Vesktop, MPV (uosc), Zathura, Flameshot, daily tools
-│   │       └── git.nix             # Git base settings, SSH agent, age/sops tools
+│   │       ├── browsers.nix        # Zen Browser, Firefox (Kanagawa userChrome)
+│   │       ├── media.nix           # AyuGram, Vesktop, MPV (uosc), Zathura, Flameshot, udiskie, daily tools
+│   │       ├── gaming.nix          # ProtonUp-Qt (Proton-CachyOS & GE), Protontricks, MangoHud, SteamTinkerLaunch
+│   │       └── git.nix             # Git base settings, SSH signing, age/sops tools
 │   └── arlecchino/                 # User profile: Aleksandra Mironova
 │       ├── default.nix             # Imports home/common + desktop aggregator
 │       └── desktop/
 │           ├── default.nix         # Desktop aggregator (niri + noctalia)
 │           ├── niri.nix            # User-level Niri scrollable tiling (Kanagawa borders), Swayidle, Qylock lockscreen
-│           └── noctalia.nix        # Noctalia status bar, app launcher & control center (Kanagawa palette)
+│           └── noctalia.nix        # Noctalia status bar, app launcher & control center (Kanagawa palette & wallpaper)
 └── secrets/                        # Encrypted secret files managed by sops-nix
 ```
 

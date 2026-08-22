@@ -9,6 +9,7 @@
     ./programs/browsers.nix
     ./programs/media.nix
     ./programs/dev.nix
+    ./programs/gaming.nix
   ];
 
   programs.home-manager.enable = true;
