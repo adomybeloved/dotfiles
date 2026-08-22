@@ -55,4 +55,22 @@
       accelSpeed = "0.0";
     };
   };
+
+  services.kanata = {
+    enable = true;
+    keyboards.internal = {
+      extraDefCfg = "process-unmapped-keys yes";
+      config = ''
+        (defsrc
+          caps
+        )
+        (defalias
+          cap (tap-hold-press 180 180 esc lctl)
+        )
+        (deflayer base
+          @cap
+        )
+      '';
+    };
+  };
 }

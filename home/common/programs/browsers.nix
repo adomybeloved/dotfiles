@@ -1,6 +1,35 @@
 { config, pkgs, inputs, ... }:
 
 let
+  kanagawaUserChrome = ''
+    :root {
+      --toolbar-bgcolor: #1F1F28 !important;
+      --tab-selected-bgcolor: #2A2A37 !important;
+      --tab-selected-textcolor: #DCD7BA !important;
+      --chrome-content-separator-color: #363646 !important;
+      --toolbar-field-background-color: #16161D !important;
+      --toolbar-field-color: #DCD7BA !important;
+      --toolbar-field-focus-background-color: #1F1F28 !important;
+      --toolbar-field-focus-color: #DCD7BA !important;
+      --toolbar-field-border-color: #363646 !important;
+      --toolbar-field-focus-border-color: #957FB8 !important;
+      --focus-outline-color: #957FB8 !important;
+      --lwt-accent-color: #1F1F28 !important;
+      --lwt-text-color: #DCD7BA !important;
+    }
+    #navigator-toolbox {
+      background-color: #1F1F28 !important;
+      border-bottom: 1px solid #2A2A37 !important;
+    }
+    #urlbar-background {
+      background-color: #16161D !important;
+      border: 1px solid #363646 !important;
+    }
+    #urlbar[focused="true"] > #urlbar-background {
+      border-color: #957FB8 !important;
+    }
+  '';
+
   sharedPolicies = {
     DisableTelemetry = true;
     DisableFirefoxStudies = true;
@@ -48,6 +77,7 @@ let
       };
     };
     Preferences = {
+      "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       "media.ffmpeg.vaapi.enabled" = true;
       "media.rdd-ffmpeg.enabled" = true;
       "widget.use-xdg-desktop-portal.file-picker" = 1;
@@ -68,6 +98,11 @@ in
   programs.firefox = {
     enable = true;
     policies = sharedPolicies;
+    profiles.default = {
+      id = 0;
+      isDefault = true;
+      userChrome = kanagawaUserChrome;
+    };
   };
 
   programs.zen-browser = {

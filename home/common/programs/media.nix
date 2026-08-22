@@ -73,6 +73,13 @@
     };
   };
 
+  services.udiskie = {
+    enable = true;
+    automount = true;
+    notify = true;
+    tray = "never";
+  };
+
   home.packages = with pkgs; [
     ayugram-desktop
     vesktop
