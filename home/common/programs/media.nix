@@ -86,6 +86,7 @@
     comma
     wl-clipboard
     brightnessctl
+    playerctl
     grim
     slurp
     p7zip
