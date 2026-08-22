@@ -6,41 +6,26 @@
     enableZshIntegration = true;
     settings = {
       format = builtins.concatStringsSep "" [
-        "[](oniViolet)"
         "$os"
         "$username"
-        "[](bg:crystalBlue fg:oniViolet)"
         "$directory"
-        "[](bg:carpYellow fg:crystalBlue)"
         "$git_branch"
         "$git_status"
-        "[](fg:carpYellow bg:springGreen)"
         "$c"
         "$rust"
         "$golang"
         "$nodejs"
         "$bun"
-        "$php"
-        "$java"
-        "$kotlin"
-        "$haskell"
         "$python"
         "$nix_shell"
-        "[](fg:springGreen bg:waveAqua)"
-        "$conda"
-        "[](fg:waveAqua bg:oniViolet2)"
         "$time"
-        "[ ](fg:oniViolet2)"
         "$cmd_duration"
         "$line_break"
         "$character"
       ];
 
-      palette = "kanagawa";
-
       os = {
         disabled = false;
-        style = "bg:oniViolet fg:sumiInk1";
         symbols = {
           NixOS = " ";
           Linux = "󰌽 ";
@@ -50,18 +35,20 @@
           Debian = "󰣚 ";
           Fedora = "󰣛 ";
         };
+        style = "bg:#957FB8 fg:#1F1F28";
+        format = "[](fg:#957FB8)[$symbol]($style)";
       };
 
       username = {
         show_always = true;
-        style_user = "bg:oniViolet fg:sumiInk1";
-        style_root = "bg:oniViolet fg:sumiInk1";
-        format = "[ $user]($style)";
+        style_user = "bg:#957FB8 fg:#1F1F28";
+        style_root = "bg:#E82424 fg:#1F1F28";
+        format = "[$user ]($style)[](fg:#957FB8) ";
       };
 
       directory = {
-        style = "bg:crystalBlue fg:sumiInk1";
-        format = "[ $path ]($style)";
+        style = "bg:#7FB4CA fg:#1F1F28";
+        format = "[](fg:#7FB4CA)[$path]($style)[](fg:#7FB4CA) ";
         truncation_length = 3;
         truncation_symbol = "…/";
         substitutions = {
@@ -74,57 +61,63 @@
       };
 
       git_branch = {
-        symbol = "";
-        style = "bg:carpYellow";
-        format = "[[ $symbol $branch ](fg:sumiInk1 bg:carpYellow)]($style)";
+        symbol = " ";
+        style = "bg:#E6C384 fg:#1F1F28";
+        format = "[](fg:#E6C384)[$symbol$branch]($style)";
       };
 
       git_status = {
-        style = "bg:carpYellow";
-        format = "[[($all_status$ahead_behind )](fg:sumiInk1 bg:carpYellow)]($style)";
+        style = "bg:#E6C384 fg:#1F1F28";
+        format = "[$all_status$ahead_behind]($style)[](fg:#E6C384) ";
       };
 
       nodejs = {
-        symbol = "";
-        style = "bg:springGreen";
-        format = "[[ $symbol( $version) ](fg:sumiInk1 bg:springGreen)]($style)";
+        symbol = " ";
+        style = "bg:#98BB6C fg:#1F1F28";
+        format = "[](fg:#98BB6C)[$symbol$version]($style)[](fg:#98BB6C) ";
       };
 
       bun = {
-        symbol = "";
-        style = "bg:springGreen";
-        format = "[[ $symbol( $version) ](fg:sumiInk1 bg:springGreen)]($style)";
+        symbol = " ";
+        style = "bg:#98BB6C fg:#1F1F28";
+        format = "[](fg:#98BB6C)[$symbol$version]($style)[](fg:#98BB6C) ";
       };
 
       rust = {
-        symbol = "";
-        style = "bg:springGreen";
-        format = "[[ $symbol( $version) ](fg:sumiInk1 bg:springGreen)]($style)";
+        symbol = " ";
+        style = "bg:#FFA066 fg:#1F1F28";
+        format = "[](fg:#FFA066)[$symbol$version]($style)[](fg:#FFA066) ";
       };
 
       golang = {
-        symbol = "";
-        style = "bg:springGreen";
-        format = "[[ $symbol( $version) ](fg:sumiInk1 bg:springGreen)]($style)";
+        symbol = " ";
+        style = "bg:#7AA89F fg:#1F1F28";
+        format = "[](fg:#7AA89F)[$symbol$version]($style)[](fg:#7AA89F) ";
       };
 
       python = {
-        symbol = "";
-        style = "bg:springGreen";
-        format = "[[ $symbol( $version) ](fg:sumiInk1 bg:springGreen)]($style)";
+        symbol = " ";
+        style = "bg:#E6C384 fg:#1F1F28";
+        format = "[](fg:#E6C384)[$symbol$version]($style)[](fg:#E6C384) ";
       };
 
       nix_shell = {
-        symbol = "";
-        style = "bg:springGreen";
-        format = "[[ $symbol( $state) ](fg:sumiInk1 bg:springGreen)]($style)";
+        symbol = " ";
+        style = "bg:#7E9CD8 fg:#1F1F28";
+        format = "[](fg:#7E9CD8)[$symbol$state]($style)[](fg:#7E9CD8) ";
       };
 
       time = {
         disabled = false;
         time_format = "%R";
-        style = "bg:oniViolet2";
-        format = "[[  $time ](fg:sumiInk1 bg:oniViolet2)]($style)";
+        style = "bg:#2A2A37 fg:#DCD7BA";
+        format = "[](fg:#2A2A37)[ $time]($style)[](fg:#2A2A37) ";
+      };
+
+      cmd_duration = {
+        show_milliseconds = true;
+        format = "[ $duration](fg:#D27E99) ";
+        disabled = false;
       };
 
       line_break = {
@@ -133,38 +126,9 @@
 
       character = {
         disabled = false;
-        success_symbol = "[❯](bold fg:oniViolet)";
-        error_symbol = "[❯](bold fg:waveRed)";
-        vimcmd_symbol = "[❮](bold fg:springGreen)";
-      };
-
-      cmd_duration = {
-        show_milliseconds = true;
-        format = " in $duration ";
-        style = "fg:oniViolet";
-        disabled = false;
-      };
-
-      palettes.kanagawa = {
-        sumiInk0 = "#16161D";
-        sumiInk1 = "#1F1F28";
-        sumiInk2 = "#2A2A37";
-        sumiInk3 = "#363646";
-        sumiInk4 = "#54546D";
-        fujiWhite = "#DCD7BA";
-        fujiGray = "#727169";
-        oniViolet = "#957FB8";
-        oniViolet2 = "#B8B4D0";
-        crystalBlue = "#7E9CD8";
-        springBlue = "#7FB4CA";
-        waveAqua = "#7AA89F";
-        springGreen = "#98BB6C";
-        boatYellow = "#C0A36E";
-        carpYellow = "#E6C384";
-        surimiOrange = "#FFA066";
-        waveRed = "#E46876";
-        samuraiRed = "#E82424";
-        sakuraPink = "#D27E99";
+        success_symbol = "[❯](bold fg:#957FB8)";
+        error_symbol = "[❯](bold fg:#E46876)";
+        vimcmd_symbol = "[❮](bold fg:#98BB6C)";
       };
     };
   };
