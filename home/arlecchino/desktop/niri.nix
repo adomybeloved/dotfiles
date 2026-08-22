@@ -83,10 +83,21 @@
       }
     }
 
+    animations {
+      slowdown 1.0
+    }
+
+    gestures {
+      dnd-edge-view-scroll {
+        trigger-width 30
+        delay-ms 100
+        max-speed 1500
+      }
+    }
+
     prefer-no-csd
 
     spawn-at-startup "noctalia"
-    spawn-at-startup "flameshot"
 
     window-rule {
       match app-id=r#"^qalculate-gtk$"#

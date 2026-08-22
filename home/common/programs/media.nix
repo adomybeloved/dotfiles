@@ -68,7 +68,7 @@
         showStartupLaunchMessage = false;
         saveAfterCopy = true;
         copyPathAfterSave = false;
-        disabledTrayIcon = false;
+        disabledTrayIcon = true;
       };
     };
   };

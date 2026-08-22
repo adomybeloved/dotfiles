@@ -11,6 +11,8 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    autocd = true;
+    historySubstringSearch.enable = true;
 
     history = {
       size = 10000;
@@ -38,7 +40,14 @@
     };
 
     initContent = ''
-      fastfetch
+      bindkey '^[[A' history-substring-search-up
+      bindkey '^[[B' history-substring-search-down
+      bindkey "$terminfo[kcuu1]" history-substring-search-up
+      bindkey "$terminfo[kcud1]" history-substring-search-down
+      if [[ -o interactive ]] && [[ -z "$FASTFETCH_SHOWN" ]] && [[ "$SHLVL" -eq 1 ]]; then
+        export FASTFETCH_SHOWN=1
+        fastfetch
+      fi
     '';
   };
 }
