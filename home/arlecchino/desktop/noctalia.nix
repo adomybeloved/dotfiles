@@ -1,5 +1,8 @@
 { config, pkgs, inputs, ... }:
 
+let
+  wallpaperPath = "${./../../../assets/wallpapers/kanagawa-black.jpg}";
+in
 {
   programs.noctalia = {
     enable = true;
@@ -25,6 +28,14 @@
       };
       desktop_widgets = {
         enabled = false;
+      };
+      wallpaper = {
+        default = {
+          path = wallpaperPath;
+        };
+        last = {
+          path = wallpaperPath;
+        };
       };
       bar = {
         default = {
