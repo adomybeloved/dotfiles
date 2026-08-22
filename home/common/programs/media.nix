@@ -87,6 +87,7 @@
     wl-clipboard
     brightnessctl
     playerctl
+    overskride
     grim
     slurp
     p7zip

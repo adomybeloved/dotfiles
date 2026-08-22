@@ -104,6 +104,8 @@
       match app-id=r#"^pavucontrol$"#
       match app-id=r#"^imv$"#
       match app-id=r#"^file-roller$"#
+      match app-id=r#"^io\.github\.kaii_lb\.Overskride$"#
+      match app-id=r#"^overskride$"#
       match title=r#"^Picture-in-Picture$"#
       match title=r#"^Open Files?$"#
       match title=r#"^Save Files?$"#

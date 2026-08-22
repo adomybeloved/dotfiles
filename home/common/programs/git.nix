@@ -17,6 +17,24 @@
     };
   };
 
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      navigate = true;
+      line-numbers = true;
+      side-by-side = false;
+      syntax-theme = "base16-256";
+      plus-style = "syntax #2B3328";
+      plus-emph-style = "syntax #344030";
+      minus-style = "syntax #43242B";
+      minus-emph-style = "syntax #542B34";
+      line-numbers-minus-style = "#E46876";
+      line-numbers-plus-style = "#98BB6C";
+      line-numbers-zero-style = "#727169";
+    };
+  };
+
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
