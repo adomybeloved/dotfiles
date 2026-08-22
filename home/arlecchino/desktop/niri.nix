@@ -113,10 +113,33 @@
     spawn-at-startup "noctalia"
     spawn-at-startup "flameshot"
 
+    window-rule {
+      match app-id=r#"^qalculate-gtk$"#
+      match app-id=r#"^pavucontrol$"#
+      match app-id=r#"^imv$"#
+      match app-id=r#"^file-roller$"#
+      match title=r#"^Picture-in-Picture$"#
+      match title=r#"^Open Files?$"#
+      match title=r#"^Save Files?$"#
+      match title=r#"^Choose Files?$"#
+      open-floating true
+    }
+
+    window-rule {
+      match app-id=r#"^zen$"#
+      default-column-width { proportion 0.66667; }
+    }
+
+    window-rule {
+      match app-id=r#"^com\.mitchellh\.ghostty$"#
+      default-column-width { proportion 0.5; }
+    }
+
     binds {
       Mod+Return { spawn "ghostty"; }
       Mod+T { spawn "ghostty"; }
       Mod+B { spawn "zen"; }
+      Mod+E { spawn "ghostty" "-e" "yazi"; }
       Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
       Mod+D { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
       Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }

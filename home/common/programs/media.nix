@@ -57,5 +57,8 @@
     slurp
     p7zip
     unzip
+    ffmpegthumbnailer
+    unar
+    poppler-utils
   ];
 }

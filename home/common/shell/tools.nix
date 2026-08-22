@@ -38,6 +38,12 @@
     };
   };
 
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
+    shellWrapperName = "y";
+  };
+
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
