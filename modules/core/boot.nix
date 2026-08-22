@@ -12,23 +12,11 @@
 
   boot.kernelModules = [ "tcp_bbr" ];
 
-  boot.plymouth = {
-    enable = true;
-  };
-
-  boot.initrd.systemd.enable = true;
-
   boot.kernelParams = [
     "transparent_hugepage=madvise"
     "split_lock_mitigate=0"
     "nowatchdog"
     "nmi_watchdog=0"
-    "quiet"
-    "splash"
-    "loglevel=3"
-    "rd.systemd.show_status=false"
-    "rd.udev.log_level=3"
-    "udev.log_priority=3"
   ];
 
   boot.kernel.sysctl = {

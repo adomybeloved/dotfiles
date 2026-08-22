@@ -12,13 +12,13 @@ Dotfiles/
 ├── AGENTS.md                       # Guidelines for AI assistants
 ├── hosts/                          # Machine-specific host configurations
 │   └── laptop/
-│       ├── default.nix             # Host definition (imports hardware-config, core, desktop/niri, hardware/*)
+│       ├── default.nix             # Host definition (imports hardware-config, core, desktop/niri, desktop/plymouth, hardware/*)
 │       └── hardware-configuration.nix
 ├── modules/                        # System-level NixOS modules
 │   ├── core/
 │   │   ├── default.nix             # Base system aggregator
 │   │   ├── nix.nix                 # Nix daemon settings, GC, store optimization
-│   │   ├── boot.nix                # Limine bootloader, Plymouth, kernel, ZRAM, sysctl
+│   │   ├── boot.nix                # Limine bootloader, kernel, ZRAM, sysctl
 │   │   ├── security.nix            # Polkit, RTKit, sudo
 │   │   ├── network.nix             # NetworkManager
 │   │   ├── sound.nix               # PipeWire, JACK
@@ -29,6 +29,7 @@ Dotfiles/
 │   │   └── docker.nix              # Docker daemon (Btrfs storage driver), autoPrune
 │   ├── desktop/
 │   │   ├── niri.nix                # System-level Niri compositor, portals, Noctalia services, Kanagawa icons
+│   │   ├── plymouth.nix            # Optional Plymouth boot splash (circle_alt theme, quiet boot)
 │   │   └── qylock.nix              # Qylock (Reverse: 1999) SDDM theme and GStreamer video codecs
 │   └── hardware/
 │       ├── amd.nix                 # AMD P-State, early KMS amdgpu, Mesa graphics
