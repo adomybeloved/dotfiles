@@ -19,12 +19,12 @@ Dotfiles/
 │   │   ├── default.nix             # Base system aggregator
 │   │   ├── nix.nix                 # Nix daemon settings, GC, store optimization
 │   │   ├── boot.nix                # Limine bootloader, kernel, ZRAM, sysctl
-│   │   ├── security.nix            # Polkit, RTKit, sudo
-│   │   ├── network.nix             # NetworkManager
+│   │   ├── security.nix            # Polkit, RTKit, sudo, GNOME Keyring, Polkit-GNOME Agent
+│   │   ├── network.nix             # NetworkManager, loose rp_filter, tun kernel module, Wireshark
 │   │   ├── sound.nix               # PipeWire, JACK
 │   │   ├── locale.nix              # Timezone, locales
-│   │   ├── fonts.nix               # System fonts (Iosevka, JetBrainsMono, Inter, fontconfig)
-│   │   ├── users.nix               # User accounts and default login shell
+│   │   ├── fonts.nix               # System fonts (Iosevka, JetBrainsMono, Inter, Sarasa Gothic, Noto CJK)
+│   │   ├── users.nix               # User accounts, wireshark/docker groups, default shell
 │   │   ├── packages.nix            # System packages, udisks2, external filesystem drivers
 │   │   └── docker.nix              # Docker daemon (Btrfs storage driver), autoPrune
 │   ├── desktop/
@@ -52,7 +52,8 @@ Dotfiles/
 │   │       ├── browsers.nix        # Zen Browser, Firefox (Kanagawa userChrome)
 │   │       ├── media.nix           # AyuGram, Vesktop, MPV (uosc), Zathura, Flameshot, udiskie, daily tools
 │   │       ├── gaming.nix          # ProtonUp-Qt (Proton-CachyOS & GE), Protontricks, MangoHud, SteamTinkerLaunch
-│   │       └── git.nix             # Git base settings, SSH signing, age/sops tools
+│   │       ├── network.nix         # AmneziaVPN, AmneziaWG, Throne, Sing-box, ByeDPI, Zapret, Wireshark, Trippy
+│   │       └── git.nix             # Git base settings, SSH signing, age/sops tools, Delta
 │   └── arlecchino/                 # User profile: Aleksandra Mironova
 │       ├── default.nix             # Imports home/common + desktop aggregator
 │       └── desktop/

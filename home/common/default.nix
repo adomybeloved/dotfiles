@@ -10,6 +10,7 @@
     ./programs/media.nix
     ./programs/dev.nix
     ./programs/gaming.nix
+    ./programs/network.nix
   ];
 
   programs.home-manager.enable = true;

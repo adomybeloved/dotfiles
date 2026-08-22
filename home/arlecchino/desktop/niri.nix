@@ -106,6 +106,10 @@
       match app-id=r#"^file-roller$"#
       match app-id=r#"^io\.github\.kaii_lb\.Overskride$"#
       match app-id=r#"^overskride$"#
+      match app-id=r#"^org\.amnezia\.vpn$"#
+      match app-id=r#"^AmneziaVPN$"#
+      match app-id=r#"^throne$"#
+      match app-id=r#"^org\.wireshark\.Wireshark$"#
       match title=r#"^Picture-in-Picture$"#
       match title=r#"^Open Files?$"#
       match title=r#"^Save Files?$"#
