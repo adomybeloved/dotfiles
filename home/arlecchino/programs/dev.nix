@@ -24,6 +24,9 @@
     gopls
     golangci-lint
 
+    docker-compose
+    lazydocker
+
     termius
     sshfs
 
