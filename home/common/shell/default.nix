@@ -37,6 +37,8 @@
       py = "python3";
       nswitch = "sudo nixos-rebuild switch --flake ~/Dotfiles#laptop";
       ntest = "nixos-rebuild dry-build --flake ~/Dotfiles#laptop";
+      nclean = "nix-collect-garbage -d && sudo nix-collect-garbage -d && sudo nix-store --optimise";
+      nupdate = "nix flake update ~/Dotfiles";
     };
 
     initContent = ''

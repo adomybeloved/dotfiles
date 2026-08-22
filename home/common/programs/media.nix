@@ -54,11 +54,6 @@
     };
   };
 
-  programs.nix-index = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
   services.flameshot = {
     enable = true;
     settings = {
